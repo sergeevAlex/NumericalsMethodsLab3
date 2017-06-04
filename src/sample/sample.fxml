@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="numberLineChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="10.0" layoutY="5.0" prefHeight="4.0" prefWidth="482.0" text="Лабораторная работа 3. Сергеев Алексей. Вариант 7. Численные методы">
+         <font>
+            <Font name="Arial Italic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="27.0" text="Условие" textFill="RED" />
+      <TableView fx:id="table" layoutX="6.0" layoutY="47.0" prefHeight="171.0" prefWidth="138.0">
+        <columns>
+          <TableColumn fx:id="Xi" prefWidth="71.60980606079102" text="Xi" />
+          <TableColumn fx:id="Yi" prefWidth="66.39019775390625" text="Yi" />
+        </columns>
+      </TableView>
+      <Button fx:id="l_btn" layoutX="561.0" layoutY="15.0" mnemonicParsing="false" onAction="#btn" text="Лагранж" />
+      <Button fx:id="n_btn" layoutX="674.0" layoutY="15.0" mnemonicParsing="false" onAction="#btn_newton" text="Ньютон" />
+      <Button fx:id="s_btn" layoutX="779.0" layoutY="15.0" mnemonicParsing="false" onAction="#sqrt_btn" text="SQRT" />
+      <Button fx:id="clear_btn" layoutX="921.0" layoutY="15.0" mnemonicParsing="false" onAction="#btn_clear" text="Clear" />
+      <TableView fx:id="lagr_table" layoutX="4.0" layoutY="254.0" prefHeight="253.0" prefWidth="140.0" visible="false">
+        <columns>
+          <TableColumn fx:id="l_Xi" prefWidth="75.0" text="Xi" />
+          <TableColumn fx:id="l_Yi" prefWidth="75.0" text="Yi" />
+        </columns>
+      </TableView>
+      <Label fx:id="lb" layoutX="4.0" layoutY="232.0" text="Многочлен Лагражна" visible="false" />
+      <LineChart fx:id="lineChart" animated="false" layoutX="321.0" layoutY="68.0" prefHeight="400.0" prefWidth="657.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label fx:id="newton_label" layoutX="174.0" layoutY="27.0" text="Многочлен Ньютона" visible="false" />
+      <TableView fx:id="newton_table" layoutX="169.0" layoutY="44.0" prefHeight="202.0" prefWidth="152.0" visible="false">
+        <columns>
+          <TableColumn fx:id="n_Xi" prefWidth="75.0" text="Xi" />
+          <TableColumn fx:id="n_Yi" prefWidth="75.0" text="Yi" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="cb" layoutX="833.0" layoutY="15.0" prefHeight="27.0" prefWidth="25.0" />
+      <TableView fx:id="sqrt_table" layoutX="169.0" layoutY="280.0" prefHeight="202.0" prefWidth="152.0" visible="false">
+        <columns>
+          <TableColumn fx:id="s_Xi" prefWidth="75.0" text="Xi" />
+          <TableColumn fx:id="s_Yi" prefWidth="75.0" text="Yi" />
+        </columns>
+      </TableView>
+      <Label fx:id="sqrt_label" layoutX="166.0" layoutY="260.0" text="Наименьших квадратов" visible="false" />
+      <Label fx:id="sr_approx" layoutX="367.0" layoutY="460.0" />
+   </children>
+</AnchorPane>
